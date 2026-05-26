@@ -1,8 +1,8 @@
-# sp-recover-toolkit — BIP-352 silent payment recovery toolkit
+# BIP-352 silent payment recovery toolkit
 
 Three scripts that together recover BIP-352 silent-payment funds when the
 wallet that produced them (e.g. an older Cake Wallet build) used a
-non-standard derivation path and can no longer spend them.
+non-standard derivation path.
 
 The work is split so the user controls how much private-key material each
 step sees. The seed is only ever handled by `sp_derive`; the network is
