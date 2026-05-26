@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sp-recover-toolkit"
+dynamic = ["version"]
+description = "BIP-352 silent-payment recovery toolkit (derive / scan / sign)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+dependencies = [
+    "coincurve==21.0.0",
+    "python-bitcointx==1.1.5",
+]
+
+[project.scripts]
+sp_derive = "sp_derive:main"
+sp_scan = "sp_scan:main"
+sp_sign = "sp_sign:main"
+
+[tool.setuptools]
+py-modules = ["sp_crypto", "sp_ui", "sp_derive", "sp_scan", "sp_sign"]
+
+[tool.setuptools.dynamic]
+version = {attr = "sp_crypto.__version__"}
